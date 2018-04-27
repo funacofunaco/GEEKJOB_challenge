@@ -1,0 +1,4 @@
+OS Windows10Home
+CPU Intel　Corei5-2520M　CPU　@　2.50GHz
+メモリ　4.00GB
+HDD容量　148GB
