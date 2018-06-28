@@ -4,9 +4,17 @@
         <servlet-name>myprofile</servlet-name>
         <servlet-class>method.NewServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Method2</servlet-name>
+        <servlet-class>hikisu.Method2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>myprofile</servlet-name>
         <url-pattern>/myprofile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Method2</servlet-name>
+        <url-pattern>/Method2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
