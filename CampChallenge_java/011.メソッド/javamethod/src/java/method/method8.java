@@ -19,20 +19,20 @@ import javax.servlet.http.HttpServletResponse;
 public class method8 extends HttpServlet {
         String[] userprofile(String s){
             //三人分の配列データを用意する。
-        String[] data1 = {"1","技育太郎","東京","男","プログラマー"};
-        String[] data2 = {"2","技育花子","北海道","女","システムエンジニア"};
-        String[] data3 = {"3","技育三郎","大阪","男","Webエンジニア"};    
-            if(data1[0].equals(s)){
-        //変数data1をreturnしてね（戻り値にしてね）
-            return data1;
-        }else if(data2[0].equals(s)){
-            return data2;
-        }else if(data3[0].equals(s)){
-            return data3;
-        }else{
-            return null;
+            String[] data1 = {"1","技育太郎","東京","男","プログラマー"};
+            String[] data2 = {"2","技育花子","北海道","女","システムエンジニア"};
+            String[] data3 = {"3","技育三郎","大阪","男","Webエンジニア"};    
+                if(data1[0].equals(s)){
+            //変数data1をreturnしてね（戻り値にしてね）
+                return data1;
+            }else if(data2[0].equals(s)){
+                return data2;
+            }else if(data3[0].equals(s)){
+                return data3;
+            }else{
+                return null;
+            }
         }
-    }
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -54,46 +54,21 @@ public class method8 extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet method8 at " + request.getContextPath() + "</h1>");
-            String[] selectedPF = userprofile("1");
-            //一人目
-            for(int i = 1; i < selectedPF.length ; i++ ){
-                if(selectedPF[i]==null){
-                   continue;
-                }else{
-                    out.println(selectedPF[i]);
-                
-                out.println("<br>");
-                }
-            } 
-            out.println("<br>");            
+            for(int j =1; j<=3;j++){ 
+                String strj = String.valueOf(j);
+                String[] selectedPF = userprofile(strj);
+                //要素を表示させる
+                for(int i = 1; i < selectedPF.length ; i++ ){
+                    if(selectedPF[i]==null){
+                       continue;
+                    }else{
+                        out.println(selectedPF[i]);
 
-            //二人目
-            selectedPF = userprofile("2");
-            
-            for(int i = 1; i < selectedPF.length ; i++ ){
-                if(selectedPF[i]==null){
-                   continue;
-                }else{
-                    out.println(selectedPF[i]);
-                
-                out.println("<br>");
+                    out.println("<br>");
+                    }
                 }
-            }   
-            out.println("<br>");
-           
-            //三人目
-            selectedPF = userprofile("3");
-            
-            for(int i = 1; i < selectedPF.length ; i++ ){
-                if(selectedPF[i]==null){
-                   continue;
-                }else{
-                    out.println(selectedPF[i]);
-                
                 out.println("<br>");
-                }
-            }
-            out.println("<br>");         
+            }            
             out.println("</body>");
             out.println("</html>");
         }

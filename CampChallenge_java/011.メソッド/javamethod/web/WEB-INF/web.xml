@@ -36,6 +36,10 @@
         <servlet-name>method8</servlet-name>
         <servlet-class>method.method8</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>method999</servlet-name>
+        <servlet-class>method.method999</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>myprofile</servlet-name>
         <url-pattern>/myprofile</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>method8</servlet-name>
         <url-pattern>/method8</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>method999</servlet-name>
+        <url-pattern>/method999</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
