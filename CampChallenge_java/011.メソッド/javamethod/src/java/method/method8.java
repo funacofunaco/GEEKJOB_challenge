@@ -12,35 +12,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 /**
  *
  * @author guest1Day
  */
-public class method6 extends HttpServlet {
-    
-    //ユーザー定義メソッド「userprofile」を作る。idを引数としてセット
-    String[] userprofile(int id){
-        //三人分の配列データを用意する。
+public class method8 extends HttpServlet {
+        String[] userprofile(String s){
+            //三人分の配列データを用意する。
         String[] data1 = {"1","技育太郎","東京","男","プログラマー"};
         String[] data2 = {"2","技育花子","北海道","女","システムエンジニア"};
-        String[] data3 = {"3","技育三郎","大阪","男","Webエンジニア"};
-        //int型で引数をセットしているので、Stringクラスに変換する
-        String strid = String.valueOf(id);
-        //もしも、data1のIDとさっき型変換した引数が一致していたら…
-        if(data1[0].equals(strid)){
+        String[] data3 = {"3","技育三郎","大阪","男","Webエンジニア"};    
+            if(data1[0].equals(s)){
         //変数data1をreturnしてね（戻り値にしてね）
             return data1;
-        }else if(data2[0].equals(strid)){
+        }else if(data2[0].equals(s)){
             return data2;
-        }else if(data3[0].equals(strid)){
+        }else if(data3[0].equals(s)){
             return data3;
         }else{
             return null;
         }
     }
-    
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -58,16 +50,50 @@ public class method6 extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet method6</title>");            
+            out.println("<title>Servlet method8</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet method6 at " + request.getContextPath() + "</h1>");
-            String[] selectedPF = userprofile(1);
+            out.println("<h1>Servlet method8 at " + request.getContextPath() + "</h1>");
+            String[] selectedPF = userprofile("1");
+            //一人目
+            for(int i = 1; i < selectedPF.length ; i++ ){
+                if(selectedPF[i]==null){
+                   continue;
+                }else{
+                    out.println(selectedPF[i]);
+                
+                out.println("<br>");
+                }
+            } 
+            out.println("<br>");            
+
+            //二人目
+            selectedPF = userprofile("2");
             
             for(int i = 1; i < selectedPF.length ; i++ ){
-                out.println(selectedPF[i]);
+                if(selectedPF[i]==null){
+                   continue;
+                }else{
+                    out.println(selectedPF[i]);
+                
                 out.println("<br>");
+                }
+            }   
+            out.println("<br>");
+           
+            //三人目
+            selectedPF = userprofile("3");
+            
+            for(int i = 1; i < selectedPF.length ; i++ ){
+                if(selectedPF[i]==null){
+                   continue;
+                }else{
+                    out.println(selectedPF[i]);
+                
+                out.println("<br>");
+                }
             }
+            out.println("<br>");         
             out.println("</body>");
             out.println("</html>");
         }
